@@ -1,0 +1,17 @@
+{
+  "name": "node2fass",
+  "version": "1.0.0",
+  "description": "Module to convert node apps in faas based node apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Rebouças de Carvalho",
+  "bin": {
+    "node2fass": "index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.352.0"
+  }
+}
