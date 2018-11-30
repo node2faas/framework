@@ -26,7 +26,7 @@ exports.io_load = function(req, res) {
 };
 
 exports.simple_load = function(req, res) {
-  var url ='https://yusmnnj2hl.execute-api.us-east-1.amazonaws.com/default/node2fass-lab-simple-load'
+  var url ='https://l88cjre6ef.execute-api.us-east-1.amazonaws.com/default/node2faas-lab-simple-load'
   var request = require('request');
   request(url, function (error, response, body) {
     res.json(body); 
