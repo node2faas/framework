@@ -12,8 +12,8 @@ To use this conversor you need to have an active account in some FaaS provider l
 
 ## Usage
 
-```node2faas [/path/to/original/application]```
+- Run: ```node2faas [/path/to/original/application]```
 
-Folow de app instructions
+- Folow de app instructions
 
-After proccess end, check the directory output for your application converted to work with FaaS
+- After proccess end, check the directory *output*,your application converted to work with FaaS will be there
