@@ -12,6 +12,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "adm-zip": "^0.4.13",
     "aws-sdk": "^2.352.0"
   }
 }

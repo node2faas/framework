@@ -8,7 +8,7 @@ for i in $EXECS; do
   for x in $SERVERS; do
   	SERVICES=$(ls outputs/$i/$x)
     for z in $SERVICES; do
-    	RESULTS=$(cat outputs/$i/$x/$z)
+    	RESULTS=$(sort outputs/$i/$x/$z)
     	for y in $RESULTS; do
     		if [ "$(echo $y | grep 'Internal')" == "" ] && [ "$(echo $y | grep 'server')" == "" ] && [ "$(echo $y | grep 'error')" == "" ]; then
 	    		if [ "$(echo $y | grep 'message')" != "" ]; then
