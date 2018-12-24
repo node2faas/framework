@@ -1,5 +1,5 @@
 {
-  "name": "calc_local",
+  "name": "load_test",
   "version": "1.0.0",
   "description": "Calculadora em Node local usando API REST",
   "main": "index.js",

@@ -1,4 +1,5 @@
 'use strict';
+//@node2faas-skip
 module.exports = function(app) {
   var api = require('../controllers/load');
 

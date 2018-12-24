@@ -1,6 +1,6 @@
 {
   "name": "node2faas",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "Module to convert node apps in faas based node apps",
   "main": "index.js",
   "scripts": {
