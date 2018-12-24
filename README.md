@@ -6,13 +6,17 @@
 
 To use this conversor you need to have an active account in some FaaS provider like Amazon AWS Lambda.
 
-## Proposite
+## Purpose
 
 This framework intend to help NodeJS developers to migrate from monolith model to function as a service (serverless) model. It parses the original code looking for exported functions and create a equivalent function on the provider. Instead of the original function is placed a restAPI request to FaaS. 
 
 ## Workflow
 
 ![node2faas-workflow](images/workflow.png)
+
+## Convertion Process
+
+![node2faas-workflow](images/convertion-process.png)
 
 
 ## Installation
@@ -22,7 +26,9 @@ This framework intend to help NodeJS developers to migrate from monolith model t
 or
 
 ```git clone https://github.com/leonardoreboucas/node2faas.git```
+
 ```cd node2faas```
+
 ```npm link```
 
 ## Usage
