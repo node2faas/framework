@@ -71,7 +71,7 @@ The load example explores 4 potencial function loads:
  - CPU -> process with high CPU consumption
  - I/O -> process with high I/O consumption
 
- There´s 2 versions of this example application. The original one, that is monolith, and the converted one, using FaaS requests. The converted application contains requests that is not available and it is only for examplification. Try use the load_not_converted application to explore the framework potential.
+ There are 2 versions of this example application. The original one, that is monolith, and the converted one, using FaaS requests. The converted application contains requests that is not available and it is only for examplification. Try use the load_not_converted application to explore the framework potential.
 
  ```node2faas examples/load_not_converted```
 
