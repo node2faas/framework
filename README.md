@@ -76,6 +76,6 @@ The load example explores 4 potencial function loads:
  ```node2faas examples/load_not_converted```
 
 
-#### Support
+## Support
 
 If you need more information, send a message to: leouesb@gmail.com
