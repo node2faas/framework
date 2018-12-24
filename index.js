@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 global.fs = require('fs');
 global.homedir = require('os').homedir();
+global.lockApi =false;
 console.log(global.homedir);
 var funcs = require('./lib/functions');
 var prepare = require('./lib/prepare');

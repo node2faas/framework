@@ -1,6 +1,6 @@
 {
-  "name": "node2fass",
-  "version": "1.0.0",
+  "name": "node2faas",
+  "version": "1.0.1",
   "description": "Module to convert node apps in faas based node apps",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "Leonardo Rebouças de Carvalho",
   "bin": {
-    "node2fass": "index.js"
+    "node2faas": "index.js"
   },
   "license": "ISC",
   "dependencies": {
