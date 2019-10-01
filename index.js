@@ -1,13 +1,14 @@
 #! /usr/bin/env node
+global.debug = true;
 global.fs = require('fs');
 global.homedir = require('os').homedir();
-global.lockApi =false;
-console.log(global.homedir);
-var funcs = require('./lib/functions');
+global.shelljs = require('shelljs');
+global.credentials = {};
+global.common = require('./lib/common');
 var prepare = require('./lib/prepare');
 var conversor = require('./lib/conversor');
 var target = process.argv[2];
-funcs.banner();
+common.banner();
 if (target){
 	prepare.prepare(target).then(function(res_prepare){
 		conversor.convert(target).then(function(res_conversor){

@@ -3,3 +3,7 @@ functions_name_remove
 api_ids_remove
 tmp
 output/*
+credenciais.txt
+*tfstate*
+.terraform
+gcp.json
