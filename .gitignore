@@ -7,3 +7,4 @@ credenciais.txt
 *tfstate*
 .terraform
 gcp.json
+temp.json
