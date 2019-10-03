@@ -1,17 +1,18 @@
 #! /usr/bin/env node
-global.debug = true;
+global.debug = false;
 global.fs = require('fs');
 global.homedir = require('os').homedir();
 global.shelljs = require('shelljs');
 global.credentials = {};
 global.common = require('./lib/common');
-var prepare = require('./lib/prepare');
-var conversor = require('./lib/conversor');
-var target = process.argv[2];
+global.method = 'apply';
+global.common.treatParams();
+global.prepare = require('./lib/prepare');
+let conversor = require('./lib/conversor');
 common.banner();
-if (target){
-	prepare.prepare(target).then(function(res_prepare){
-		conversor.convert(target).then(function(res_conversor){
+if (global.target){
+	global.prepare.prepare(global.target).then(function(res_prepare){
+		conversor.convert(global.target).then(function(res_conversor){
 			console.log("Finished!");
 		});
 	},function(){
