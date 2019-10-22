@@ -8,3 +8,5 @@ credenciais.txt
 .terraform
 gcp.json
 temp.json
+node_modules/*
+*terraform-latest*

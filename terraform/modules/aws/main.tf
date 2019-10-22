@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+  name = "iam_for_lambda-${var.region}-${var.name}"
 
   assume_role_policy = <<EOF
 {
@@ -30,7 +30,7 @@ resource "aws_lambda_function" "function" {
   function_name    = "node2faas-${var.name}"
   description      = "Function ${var.name} automaticly created by node2faas"
   role             = "${aws_iam_role.iam_for_lambda.arn}"
-  handler          = "exports.${var.name}"
+  handler          = "${var.name}.${var.name}"
   source_code_hash = "${filebase64sha256("${var.sourcecode_zip_path}")}"
   runtime          = "nodejs10.x"
 }
