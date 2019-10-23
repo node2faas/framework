@@ -35,7 +35,7 @@ resource "azurerm_storage_container" "storage_container" {
 }
 
 resource "azurerm_storage_blob" "storage_blob" {
- name = "${var.name}zip"
+ name = "${var.name}.zip"
  resource_group_name = "${azurerm_resource_group.rg.name}"
  storage_account_name = "${azurerm_storage_account.storage.name}"
  storage_container_name = "${azurerm_storage_container.storage_container.name}"

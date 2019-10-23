@@ -7,3 +7,11 @@ exports.soma = function(req, res) {
   res.json(result);
   return result;
 } ;
+
+exports.subtrai = function(req, res) {
+  var a = 10;
+  var b = 1;
+  var result = a - b;
+  res.json(result);
+  return result;
+} ;
