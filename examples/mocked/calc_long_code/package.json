@@ -1,7 +1,7 @@
 {
   "name": "calc_local",
   "version": "1.0.0",
-  "description": "Calculadora em Node local usando API REST",
+  "description": "Calculator using API REST",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
