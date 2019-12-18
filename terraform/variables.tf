@@ -27,7 +27,7 @@ variable "name" {
 
 variable "memory" {
   type = number
-  default = 256
+  default = 1024
 }
 
 variable "subscription_id" {

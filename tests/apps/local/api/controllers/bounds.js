@@ -18,8 +18,7 @@ exports.memory = function(req, res) {
       result[x][i] = x+i;
     }
   }
-  result = eval(result.join("+"));
-  res.json(result);
+  res.json(eval(result.join('+')));
 };
 
 exports.io = function(req, res) {

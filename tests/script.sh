@@ -3,10 +3,10 @@ input="tests.csv"
 DT=$(date +%d-%m-%Y_%H-%M-%S)
 OUTPUT=results/$DT
 mkdir -p $OUTPUT
-INNER_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/examples/mocked/bounds/
-GCP_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/examples/mocked/bounds/
-AZURE_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/examples/mocked/bounds/
-AWS_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/examples/mocked/bounds/
+INNER_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/tests/apps/local/
+GCP_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/tests/apps/gcp/
+AZURE_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/tests/apps/azure/
+AWS_APP=/Volumes/Leonardo/Google\ Drive/Mestrado/Projeto/node2faas/tests/apps/aws/
 start_service()
 {
   APP=$1
@@ -18,7 +18,6 @@ start_service()
   if [ "$APP" == "Inner Processed" ]; then
     cd "$INNER_APP"
     node server >> /dev/null &
-    sleep 2
   else
     if [ "$PROVIDER" == "GCP" ]; then
       cd "$GCP_APP"
@@ -33,6 +32,7 @@ start_service()
       node server >> /dev/null &
     fi
   fi
+  sleep 2
   cd - > /dev/null
 }
 

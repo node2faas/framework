@@ -32,7 +32,7 @@ resource "google_cloudfunctions_function" "function" {
   source_archive_bucket = "${google_storage_bucket.bucket.name}"
   source_archive_object = "${google_storage_bucket_object.archive.name}"
   trigger_http          = true
-  timeout               = 60
+  timeout               = 180
   entry_point           = var.name
   labels = {
     my-label = var.name
