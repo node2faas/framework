@@ -7,6 +7,7 @@
 
 
 
+
 exports.cpu = function(req,res){
   /**** Function converted by Node2FaaS ****/
   let stringParam = '';
@@ -21,7 +22,7 @@ if( res.params !== undefined ){
   }
 }
 
-  let uri = "https://node2faas873.azurewebsites.net/api/cpu?code=Otqx3kuuajbvwWsxw5vnvaD1qLaMUfaH7goKxQN7syRU/n1CTUGXpw=="+stringParam;
+  let uri = "https://node2faas174.azurewebsites.net/api/cpu?code=5JIrUbFkPtn3ZdZYGuPk22smyvfc8WjWthr3GTHUP3U1gPepZFPcaA=="+stringParam;
 	let request = require('request');
 	request(uri, function (error, response, body) {
     if (error){
@@ -46,7 +47,7 @@ if( res.params !== undefined ){
   }
 }
 
-  let uri = "https://node2faas473.azurewebsites.net/api/memory?code=unZgJZE2fddca3GvzXZy8XJUamn04XRerAIW1sFZwftr15pM6jBAYQ=="+stringParam;
+  let uri = "https://node2faas112.azurewebsites.net/api/memory?code=p3j7ZiHlm32kq67qP9zHjEaJ9zCI/UQqiOchoOT4tWpzazmDw/a3XQ=="+stringParam;
 	let request = require('request');
 	request(uri, function (error, response, body) {
     if (error){
@@ -71,7 +72,7 @@ if( res.params !== undefined ){
   }
 }
 
-  let uri = "https://node2faas837.azurewebsites.net/api/io?code=yEjLchymLfhsl7dL9pGKBbUAvXVlKpFIMTKIKejPK0vPd7sBBMKuJw=="+stringParam;
+  let uri = "https://node2faas696.azurewebsites.net/api/io?code=jHORePah/UbKgk3wat3yRoD3h5BSak3iJNYZvcoAacq7jQlqRuvHww=="+stringParam;
 	let request = require('request');
 	request(uri, function (error, response, body) {
     if (error){

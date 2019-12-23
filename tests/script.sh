@@ -23,7 +23,7 @@ start_service()
       cd "$GCP_APP"
       node server >> /dev/null &
     fi
-    if [ "$PROVIDER" == "AZURE" ]; then
+    if [ "$PROVIDER" == "Azure" ]; then
       cd "$AZURE_APP"
       node server >> /dev/null &
     fi

@@ -107,6 +107,7 @@ resource "azurerm_function_app" "function" {
     "APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.insights.instrumentation_key}"
     "FUNCTION_APP_EDIT_MODE" = "readonly"
     "https_only" = true
+    "functionTimeout" = "00:30:00"
     "HASH" = "${filebase64sha256("${var.sourcecode_zip_path}")}"
     "WEBSITE_NODE_DEFAULT_VERSION" = "10.14.1"
     "WEBSITE_USE_ZIP" = "https://${azurerm_storage_account.storage.name}.blob.core.windows.net/${azurerm_storage_container.storage_container.name}/${azurerm_storage_blob.storage_blob.name}${data.azurerm_storage_account_sas.storage_sas.sas}"
