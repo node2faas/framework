@@ -2,4 +2,15 @@
 functions_name_remove
 api_ids_remove
 tmp
+tmp/*
+output
 output/*
+credentials.txt
+*tfstate*
+.terraform
+gcp.json
+temp.json
+node_modules
+node_modules/*
+*terraform-latest*
+.exec-*
