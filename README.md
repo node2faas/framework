@@ -2,13 +2,17 @@
 
 ### Node Applications conversor to Function as a Service (FaaS) Deployments.
 
+## Versions
+
+ - 0.0.1 - Initial Release
+
 ## Pre-Requisites
 
 To use this conversor you need to have an active account in some FaaS provider like Amazon AWS Lambda.
 
 ## Purpose
 
-This framework intend to help NodeJS developers to migrate from monolith model to function as a service (serverless) model. It parses the original code looking for exported functions and create a equivalent function on the provider. Instead of the original function is placed a restAPI request to FaaS. 
+This framework intend to help NodeJS developers to migrate from monolith model to function as a service (serverless) model. It parses the original code looking for exported functions and create a equivalent function on the provider. Instead of the original function is placed a restAPI request to FaaS.
 
 ## Workflow
 
@@ -55,9 +59,9 @@ or
 	- *Google Functions (under construction)*
 - Function types:
 	- exported (OK)
-		- Ex: ```exports.functionName = function(params) { ... } ``` 
-	- *local (under construction)* 
-		- Ex: ```functionName(params) { ... } ``` 
+		- Ex: ```exports.functionName = function(params) { ... } ```
+	- *local (under construction)*
+		- Ex: ```functionName(params) { ... } ```
 
 ## Examples
 
@@ -74,6 +78,35 @@ The load example explores 4 potencial function loads:
  There are 2 versions of this example application. The original one, that is monolith, and the converted one, using FaaS requests. The converted application contains requests that is not available and it is only for examplification. Try use the load_not_converted application to explore the framework potential.
 
  ```node2faas examples/load_not_converted```
+
+
+## Evaluations
+
+### Preliminaries Tests
+
+- 1 to 100 concurrent
+ - Simple Test (simple math operations)
+ - CPU stress Test (multiple cycles of simple operations)
+ - Memory stress Test (multiple cycles of writing on memory operations)
+ - I/O stress Test (multiple cycles of writing on disk operations)
+
+#### Architecture
+
+![node2faas-test-arch](images/test_arch.png)
+
+#### Results
+
+##### Simple Test
+![simple-test](images/test_simple_load.png)
+
+##### CPU Stress Test
+![cpu-test](images/test_cpu_load.png)
+
+##### Memory Stress Test
+![memory-test](images/test_mem_load.png)
+
+##### Memory I/O Test
+![io-test](images/test_io_load.png)
 
 ## Publications
 
