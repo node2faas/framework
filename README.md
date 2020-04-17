@@ -128,7 +128,7 @@ The load example explores 3 potential function loads:
 
 ## Evaluations
 
-### Preliminary
+### Preliminary Tests
 
 - 1 to 100 concurrent requests to each service (traditional and converted)
 - Simple Test (simple math operations)
@@ -155,7 +155,7 @@ The load example explores 3 potential function loads:
 ![io-test](images/test_io_load.png)
 
 
-### Conclusive
+### Conclusive Tests
 
 - CPU stress Test (multiple cycles of simple operations)
 - Memory stress Test (multiple cycles of writing on memory operations)
