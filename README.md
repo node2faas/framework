@@ -58,7 +58,7 @@ The framework is prepared to work only with:
 - Providers:
 	- AWS Lambda
 - Function types:
-	- exported (OK)
+	- exported
 		- Ex: ```exports.functionName = function(params) { ... } ```
 
 ## Examples
