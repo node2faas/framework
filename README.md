@@ -82,7 +82,7 @@ The load example explores 4 potencial function loads:
 
 ### Preliminary
 
-- 1 to 100 concurrent
+- 1 to 100 concurrent requests to each service (tradicional and converted)
 - Simple Test (simple math operations)
 - CPU stress Test (multiple cycles of simple operations)
 - Memory stress Test (multiple cycles of writing on memory operations)
