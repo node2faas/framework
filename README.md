@@ -75,6 +75,10 @@ The load example explores 4 potencial function loads:
 
  ```node2faas examples/load_not_converted```
 
+## Publications
+
+ - 2019, May => CLOSER, Heraklion, Greece ([paper](https://www.scitepress.org/PublicationsDetail.aspx?ID=idUowDezrE8=&t=1))
+
 
 ## Support
 
