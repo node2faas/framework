@@ -54,7 +54,7 @@ To use this conversor you need to have an active account in one of this FaaS ser
  * private_key_id
  * zone
 
-Ensure this JSON is put on file: common/account.json.
+The JSON file location will be prompted by the framework during its process.
 
 ## Workflow
 
