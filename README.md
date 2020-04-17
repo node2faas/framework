@@ -63,7 +63,7 @@ The framework is prepared to work only with:
 
 ## Examples
 
-This project contains some examples to guide you. Look inside example folder.
+This project contains some examples to guide you. Look inside examples folder.
 
 #### Load example
 
