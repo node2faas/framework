@@ -97,7 +97,7 @@ or
 ## Features
 
 - Convert only .js files (other file types are skipped)
-- Store provider credentials after first execution (don't ask again)
+- Stores provider credentials after first execution (don't ask again)
 - Creates new FaaS function on the choose provider
 - Creates all provider API Gateway resources
 
