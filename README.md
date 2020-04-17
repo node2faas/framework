@@ -53,15 +53,13 @@ or
 
 ## Limitations
 
+The framework is prepared to work only with:
+
 - Providers:
-	- AWS Lambda (OK)
-	- *Microsoft Azure (under construction)*
-	- *Google Functions (under construction)*
+	- AWS Lambda
 - Function types:
 	- exported (OK)
 		- Ex: ```exports.functionName = function(params) { ... } ```
-	- *local (under construction)*
-		- Ex: ```functionName(params) { ... } ```
 
 ## Examples
 
@@ -82,30 +80,30 @@ The load example explores 4 potencial function loads:
 
 ## Evaluations
 
-### Preliminaries Tests
+### Preliminary
 
 - 1 to 100 concurrent
- - Simple Test (simple math operations)
- - CPU stress Test (multiple cycles of simple operations)
- - Memory stress Test (multiple cycles of writing on memory operations)
- - I/O stress Test (multiple cycles of writing on disk operations)
+- Simple Test (simple math operations)
+- CPU stress Test (multiple cycles of simple operations)
+- Memory stress Test (multiple cycles of writing on memory operations)
+- I/O stress Test (multiple cycles of writing on disk operations)
+- All data generated in this evaluation is available in path: evaluations/preliminary/outputs
+- Files generated have this structure: [initial timestamp in nanoseconds],[final timestamp in nanoseconds],[duration in nanoseconds],[output from service]
 
-#### Architecture
+### Architecture
 
 ![node2faas-test-arch](images/test_arch.png)
 
-#### Results
-
-##### Simple Test
+### Results of Simple Test
 ![simple-test](images/test_simple_load.png)
 
-##### CPU Stress Test
+### Results of CPU Stress Test
 ![cpu-test](images/test_cpu_load.png)
 
-##### Memory Stress Test
+### Results of Memory Stress Test
 ![memory-test](images/test_mem_load.png)
 
-##### Memory I/O Test
+### Results of Memory I/O Test
 ![io-test](images/test_io_load.png)
 
 ## Publications
