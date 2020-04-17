@@ -60,7 +60,7 @@ Ensure this JSON is put on file: common/account.json.
 
 ![node2faas-workflow](images/workflow.png)
 
-## Convertion Process
+## Conversion Process
 
 ![node2faas-workflow](images/convertion-process.png)
 
