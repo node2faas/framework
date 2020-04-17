@@ -46,7 +46,7 @@ or
 
 ## Features
 
-- Convert only .js files (other kinds are skipped)
+- Convert only .js files (other file types are skipped)
 - Store provider credentials after first execution (don't ask again)
 - Creates new FaaS function on the choosed provider
 - Creates all provider API Gateway resources
