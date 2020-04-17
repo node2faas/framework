@@ -4,12 +4,15 @@
 
 ## Versions
 
-  - 0.1.0 - 2019,Dec - Add multicloud orchestrator (Terraform) with support to AWS, GCP and Azure FaaS services; Function pre-analysis;
-  - 0.0.1 - 2018,Dec - Initial Release
+  - 0.1.0 - 2019,Dec
+    1. Add multicloud orchestrator (Terraform) with support to AWS, GCP and Azure FaaS services;
+    1. Function pre-analysis;
+  - 0.0.1 - 2018,Dec
+    1. Initial Release
 
 ## Purpose
 
-This framework intend to help NodeJS developers to migrate from monolith model to function as a service (serverless) model. It parses the original code looking for exported functions and create a equivalent function on the provider. Instead of the original function is placed a restAPI request to FaaS.
+This framework intend to help NodeJS developers to migrate from monolith model to function as a service (serverless) model. It parses the original code looking for exported functions and creates an equivalent function on the provider. Instead of the original function is placed a restAPI request to FaaS.
 
 ## Pre-Requisites
 
