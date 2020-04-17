@@ -1,7 +1,7 @@
 {
   "name": "node2faas",
-  "version": "0.0.1",
-  "description": "Module to convert node apps in faas based node apps",
+  "version": "0.1.0",
+  "description": "Module to convert node.js apps into faas based node.js apps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
