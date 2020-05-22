@@ -1,4 +1,4 @@
-# Node2FaaS Framework
+![images/node2faas-logo-big.png](images/node2faas-logo-big.png)
 
 ### Node Applications conversor to Function as a Service (FaaS) Deployments.
 
