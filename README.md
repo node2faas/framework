@@ -2,7 +2,7 @@
 
 ### Node Applications conversor to Function as a Service (FaaS) Deployments.
 
-[Hot Page](https://leonardoreboucas.faasification.com/)
+[Hot Page](https://node2faas.faasification.com/)
 
 ## Versions
 
