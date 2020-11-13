@@ -130,7 +130,7 @@ The load example explores 3 potential function loads:
 
 ## Evaluations
 
-### Preliminary Tests
+### Tests without orchestrator
 
 - 1 to 100 concurrent requests to each service (traditional and converted)
 - Simple Test (simple math operations)
@@ -140,24 +140,24 @@ The load example explores 3 potential function loads:
 - All data generated in this evaluation is available in path: evaluations/preliminary/outputs
 - Files generated have this structure: [initial timestamp in nanoseconds],[final timestamp in nanoseconds],[duration in nanoseconds],[output from service]
 
-### Architecture
+### Test Architecture
 
 ![node2faas-test-arch](images/test_arch.png)
 
 ### Results of Simple Test
-![simple-test](images/test_simple_load.png)
+![simple-test](images/exp1_math_results.png)
 
 ### Results of CPU Stress Test
-![cpu-test](images/test_cpu_load.png)
+![cpu-test](images/exp1_cpu_results.png)
 
 ### Results of Memory Stress Test
-![memory-test](images/test_mem_load.png)
+![memory-test](images/exp1_mem_results.png)
 
 ### Results of Memory I/O Test
-![io-test](images/test_io_load.png)
+![io-test](images/exp1_io_results.png)
 
 
-### Conclusive Tests
+### Tests with Terraform as orchestrator
 
 - CPU stress Test (multiple cycles of simple operations)
 - Memory stress Test (multiple cycles of writing on memory operations)
@@ -173,13 +173,19 @@ The load example explores 3 potential function loads:
 - Files generated have this structure: [id test case],[sequence],[test output],[duration in nanoseconds]
 
 ### Results of CPU Bound Test
-![cpu-conclusive-test](images/conclusive_test_cpu.png)
+![cpu-conclusive-test](images/exp2_cpu.png)
 
 ### Results of Memory Bound Test
-![mem-conclusive-test](images/conclusive_test_memory.png)
+![mem-conclusive-test](images/exp2_mem.png)
 
 ### Results of I/O Bound Test
-![io-conclusive-test](images/conclusive_test_io.png)
+![io-conclusive-test](images/exp2_io.png)
+
+### Reliability rates
+![reliability](images/reliability.png)
+
+### Minimal and maximal execution time
+![min_max_exec_time](images/min_max_exec_time.png)
 
 
 ## Publications
@@ -188,7 +194,7 @@ The load example explores 3 potential function loads:
 
  - 2020, May => CLOSER, Online Streaming ([paper](https://www.insticc.org/Primoris/Resources/PaperPdf.ashx?idPaper=93815))
 
- - 2020, Nov => CCGRID, Melbourne, Australia ([paper n. 36](http://cloudbus.org/ccgrid2020/acceptedpapers.html))
+ - 2020, Nov => CCGRID, Melbourne, Australia ([paper](https://ieeexplore.ieee.org/document/9139623))
 
 
 ## Support
