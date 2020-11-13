@@ -2,7 +2,7 @@
 
 ### Node Applications conversor to Function as a Service (FaaS) Deployments.
 
-[Hot Page](https://leonardoreboucas.github.io/node2faas/)
+[Hot Page](https://leonardoreboucas.faasification.com/)
 
 ## Versions
 
@@ -77,7 +77,7 @@ The JSON file location will be prompted by the framework during its process.
 
 or
 
-```git clone https://github.com/leonardoreboucas/node2faas.git```
+```git clone https://github.com/node2faas/framework.git```
 
 ```cd node2faas```
 
