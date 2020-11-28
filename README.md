@@ -8,7 +8,7 @@
 
   - 0.1.1 - 2020,Nov
     1. Minor bug corrections;
-    1. Graphics on avaluations;
+    1. Graphics on evaluations;
     1. Readme Update
   - 0.1.0 - 2019,Dec
     1. Add multicloud orchestrator (Terraform) with support to AWS, GCP and Azure FaaS services;
