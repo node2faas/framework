@@ -24,9 +24,13 @@ if (global.target){
   		console.log("Converted app will be avaiable in output/"+target);
   		console.log("Before execution run 'npm install request' inside output/"+target)
   		console.log("-----------------------------------------------------------------------\n");
-  		console.log("Analizing "+global.target)+"...\n";
+  		console.log("Analyzing "+global.target)+"...\n";
     }
-		conversor.convert(global.target);
+		const outputFolder = 'output/'
+		global.common.downloadDependencies(global.target)
+		conversor.convert(global.target, outputFolder+global.target);
+		common.addDependencyToOutput(global.target, outputFolder+global.target, 'axios', '0.23.0');
+		global.common.downloadDependencies(outputFolder+global.target)
 		console.log("Finished!");
 		common.sumary();
 	},function(err){
@@ -34,6 +38,6 @@ if (global.target){
 	});
 } else {
 	console.log("Error: Target project not found! \
-	             \nPlease provide the path of the original application \
-							 \nType node2faas --help for instructions");
+	            \nPlease provide the path of the original application \
+				\nType node2faas --help for instructions");
 }
