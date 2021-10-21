@@ -31,7 +31,7 @@ resource "aws_lambda_function" "function" {
   role             = "${aws_iam_role.iam_for_lambda.arn}"
   handler          = "${var.name}.${var.name}"
   source_code_hash = "${filebase64sha256("${var.sourcecode_zip_path}")}"
-  runtime          = "nodejs10.x"
+  runtime          = "nodejs14.x"
 }
 
 resource "aws_api_gateway_rest_api" "rest" {
