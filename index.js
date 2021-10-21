@@ -14,19 +14,22 @@ global.common = require('./lib/common');
 global.method = 'apply';
 global.common.treatParams();
 global.provider = 'aws';
-global.prepare = require('./lib/prepare');
-let conversor = require('./lib/conversor');
+global.prepare 	= require('./lib/prepare');
+global.conversor = require('./lib/conversor');
 common.banner();
 if (global.target){
-	global.prepare.prepare(global.target).then(function(res_prepare){
+	global.output = 'output/' + global.target.replace(/\.\.\//g,"")
+	global.prepare.prepare(global.target,global.output).then(function(res_prepare){
 		if (global.method == 'apply'){
-  		console.log("-----------------------------------------------------------------------");
-  		console.log("Converted app will be avaiable in output/"+target);
-  		console.log("Before execution run 'npm install request' inside output/"+target)
-  		console.log("-----------------------------------------------------------------------\n");
-  		console.log("Analizing "+global.target)+"...\n";
-    }
-		conversor.convert(global.target);
+			console.log("-----------------------------------------------------------------------");
+			console.log("Converted app will be avaiable in "+global.output +global.target);
+			console.log("-----------------------------------------------------------------------\n");
+			console.log("Analyzing "+global.target+"...\n");
+    	}
+		global.common.downloadDependencies(global.target)
+		conversor.convert(global.target, global.output );
+		common.addDependencyToOutput(global.target, global.output , 'axios', '0.23.0');
+		global.common.downloadDependencies(global.output)
 		console.log("Finished!");
 		common.sumary();
 	},function(err){
@@ -34,6 +37,6 @@ if (global.target){
 	});
 } else {
 	console.log("Error: Target project not found! \
-	             \nPlease provide the path of the original application \
-							 \nType node2faas --help for instructions");
+	            \nPlease provide the path of the original application \
+				\nType node2faas --help for instructions");
 }

@@ -5,7 +5,15 @@
 [Hot Page](https://node2faas.faasification.com/)
 
 ## Versions
-
+  - 0.2.0 - 2021,Oct
+    1. AWS: 
+      - Add CloudWatch automatic integration;
+      - Update runtime from nodejs10.x (deprecated) to nodejs14.x.
+    1. FaaS zip file generated with dependencies (node_modules);
+    1. Replacing package Request (deprecated) by Axios
+    1. Automatically add Axios in generated app package.json
+    1. Parameters passed via POST
+    1. New annotation feature: force / skip publication on FaaS
   - 0.1.1 - 2020,Nov
     1. Minor bug corrections;
     1. Graphics on evaluations;
@@ -106,6 +114,12 @@ or
 - Stores provider credentials after first execution (don't ask again)
 - Creates new FaaS function on the choose provider
 - Creates all provider API Gateway resources
+- Annotations (add a comment anywhere inside function definition)
+  - Skip publication: 
+    - `//@node2faas-skip`
+  - Force publication: 
+    - `//@node2faas-force`
+  
 
 ## Limitations
 
@@ -203,4 +217,4 @@ The load example explores 3 potential function loads:
 
 ## Support
 
-If you need more information, send a message to: leouesb@gmail.com
+If you need more information, please send a message to: leouesb@gmail.com
