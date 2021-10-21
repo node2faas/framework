@@ -7,7 +7,7 @@ global.sumary['files'] = 0;
 global.sumary['funcs_elegibles'] = 0;
 global.sumary['funcs_not_elegibles'] = 0;
 global.fs = require('fs');
-global.homedir = require('os').homedir();
+global.homedir = __dirname;  //require('os').homedir();
 global.shelljs = require('shelljs');
 global.credentials = {};
 global.common = require('./lib/common');
@@ -18,16 +18,16 @@ global.prepare 	= require('./lib/prepare');
 global.conversor = require('./lib/conversor');
 common.banner();
 if (global.target){
-	global.output = 'output/' + global.target.replace(/\.\.\//g,"")
+	global.output = global.common.cleanDoubleSlashes('output/' + global.target.replace(/\.\.\//g,""))
 	global.prepare.prepare(global.target,global.output).then(function(res_prepare){
 		if (global.method == 'apply'){
 			console.log("-----------------------------------------------------------------------");
-			console.log("Converted app will be avaiable in "+global.output +global.target);
+			console.log(`Converted app will be avaiable in ${global.common.cleanDoubleSlashes(global.output+global.target)}`);
 			console.log("-----------------------------------------------------------------------\n");
 			console.log("Analyzing "+global.target+"...\n");
     	}
 		global.common.downloadDependencies(global.target)
-		conversor.convert(global.target, global.output );
+		conversor.convert(global.target, global.output);
 		common.addDependencyToOutput(global.target, global.output , 'axios', '0.23.0');
 		global.common.downloadDependencies(global.output)
 		console.log("Finished!");

@@ -1,9 +1,8 @@
 
 provider "google" {
-  credentials = "${file("gcp.json")}"
+  credentials = "${file(var.credential_file_path)}"
   project     = var.project
   region      = var.region
-  #region      = "us-central1"
 }
 
 resource "random_string" "bucket_name" {

@@ -3,6 +3,7 @@ provider "azurerm" {
   client_id = var.client_id
   client_secret = var.client_secret
   tenant_id = var.tenant_id
+  features {}
 }
 
 resource "random_string" "rg_name" {
@@ -28,17 +29,15 @@ resource "azurerm_storage_account" "storage" {
 
 resource "azurerm_storage_container" "storage_container" {
  name = "node2faas${random_string.rg_name.result}"
- resource_group_name = "${azurerm_resource_group.rg.name}"
  storage_account_name = "${azurerm_storage_account.storage.name}"
  container_access_type = "blob"
 }
 
 resource "azurerm_storage_blob" "storage_blob" {
  name = "${var.name}.zip"
- resource_group_name = "${azurerm_resource_group.rg.name}"
  storage_account_name = "${azurerm_storage_account.storage.name}"
  storage_container_name = "${azurerm_storage_container.storage_container.name}"
- type = "block"
+ type = "Block"
  source = var.sourcecode_zip_path
 }
 
@@ -90,7 +89,7 @@ resource "azurerm_application_insights" "insights" {
   name                = "node2faas${random_string.rg_name.result}"
   location            = "${azurerm_resource_group.rg.location}"
   resource_group_name = "${azurerm_resource_group.rg.name}"
-  application_type    = "Web"
+  application_type    = "Node.JS"
   depends_on = [azurerm_resource_group.rg]
 }
 
