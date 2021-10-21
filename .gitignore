@@ -1,5 +1,7 @@
-.node2faas_provider
+.node2faas*
 .aws
+.gcp
+.azure
 .DS_Store
 functions_name_remove
 api_ids_remove
