@@ -7,8 +7,8 @@
 ## Versions
   - 0.2.0 - 2021,Oct
     1. AWS: 
-      1. Add CloudWatch automatic integration;
-      1. Update runtime from nodejs10.x (deprecated) to nodejs14.x.
+      - Add CloudWatch automatic integration;
+      - Update runtime from nodejs10.x (deprecated) to nodejs14.x.
     1. FaaS zip file generated with dependencies (node_modules);
     1. Replacing package Request (deprecated) by Axios
     1. Automatically add Axios in generated app package.json
