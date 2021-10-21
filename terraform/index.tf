@@ -5,6 +5,8 @@ module "node2faas-gcp" {
   region = var.region
   name = var.name
   memory = var.memory
+  credential_file_path = var.credential_file_path
+  runtime_version = var.runtime_version
 }
 
 module "node2faas-aws" {
@@ -15,6 +17,7 @@ module "node2faas-aws" {
   region = var.region
   name = var.name
   memory = var.memory
+  runtime_version = var.runtime_version
 }
 
 module "node2faas-azure" {
@@ -26,4 +29,5 @@ module "node2faas-azure" {
   tenant_id = var.tenant_id
   region = var.region
   name = var.name
+  runtime_version = var.runtime_version
 }

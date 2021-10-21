@@ -27,7 +27,7 @@ variable "name" {
 
 variable "memory" {
   type = number
-  default = 1024
+  default = 128
 }
 
 variable "subscription_id" {
@@ -48,4 +48,14 @@ variable "client_secret" {
 variable "tenant_id" {
   type = string
   default = null
+}
+
+variable "credential_file_path" {
+  type = string
+  default = "gcp.json"
+}
+
+variable "runtime_version" {
+  type = string
+  default = 14
 }

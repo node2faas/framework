@@ -26,7 +26,7 @@ resource "google_storage_bucket_object" "archive" {
 resource "google_cloudfunctions_function" "function" {
   name                  = "node2faas-${var.project}-${var.name}"
   description           = "Automatic created by node2faas for process function -> ${var.name}"
-  runtime               = "nodejs10"
+  runtime               = "nodejs${var.runtime_version}"
   available_memory_mb   = var.memory
   source_archive_bucket = "${google_storage_bucket.bucket.name}"
   source_archive_object = "${google_storage_bucket_object.archive.name}"

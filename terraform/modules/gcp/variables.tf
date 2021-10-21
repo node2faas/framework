@@ -4,7 +4,6 @@ variable "sourcecode_zip_path" {
 
 variable "credential_file_path" {
   type = string
-  default = "default.json"
 }
 
 variable "project" {
@@ -21,4 +20,8 @@ variable "name" {
 
 variable "memory" {
   type = number
+}
+
+variable "runtime_version" {
+  type = string
 }

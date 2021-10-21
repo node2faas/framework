@@ -4,9 +4,17 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda-${var.region}-${var.name}"
+resource "random_string" "default" {
+ length = 5
+ special = false
+ upper = false
+ lower = false
+ number = true
+}
 
+resource "aws_iam_role" "iam_for_lambda" {
+  name = "node2faas_iam_for_lambda-${var.region}-${var.name}-${random_string.default.result}"
+  force_detach_policies = true
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -26,16 +34,19 @@ EOF
 
 resource "aws_lambda_function" "function" {
   filename         = var.sourcecode_zip_path
-  function_name    = "node2faas-${var.name}"
+  function_name    = "node2faas-${var.name}-${random_string.default.result}"
   description      = "Function ${var.name} automatically created by node2faas"
   role             = "${aws_iam_role.iam_for_lambda.arn}"
   handler          = "${var.name}.${var.name}"
   source_code_hash = "${filebase64sha256("${var.sourcecode_zip_path}")}"
-  runtime          = "nodejs14.x"
+  runtime          = "nodejs${var.runtime_version}.x"
+  depends_on = [
+    aws_iam_role.iam_for_lambda
+  ]
 }
 
 resource "aws_api_gateway_rest_api" "rest" {
-  name        = "node2faas-rest-${var.name}"
+  name        = "node2faas-rest-${var.name}-${random_string.default.result}"
   description = "REST API for function ${var.name} automatically created by node2faas"
 }
 

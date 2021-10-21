@@ -25,3 +25,7 @@ variable "region" {
 variable "name" {
   type = string
 }
+
+variable "runtime_version" {
+  type = string
+}

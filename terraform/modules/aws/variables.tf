@@ -21,3 +21,7 @@ variable "name" {
 variable "memory" {
   type = number
 }
+
+variable "runtime_version" {
+  type = string
+}
