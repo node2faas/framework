@@ -14,23 +14,22 @@ global.common = require('./lib/common');
 global.method = 'apply';
 global.common.treatParams();
 global.provider = 'aws';
-global.prepare = require('./lib/prepare');
-let conversor = require('./lib/conversor');
+global.prepare 	= require('./lib/prepare');
+global.conversor = require('./lib/conversor');
 common.banner();
 if (global.target){
-	global.prepare.prepare(global.target).then(function(res_prepare){
+	global.output = 'output/' + global.target.replace(/\.\.\//g,"")
+	global.prepare.prepare(global.target,global.output).then(function(res_prepare){
 		if (global.method == 'apply'){
-  		console.log("-----------------------------------------------------------------------");
-  		console.log("Converted app will be avaiable in output/"+target);
-  		console.log("Before execution run 'npm install request' inside output/"+target)
-  		console.log("-----------------------------------------------------------------------\n");
-  		console.log("Analyzing "+global.target)+"...\n";
-    }
-		const outputFolder = 'output/'
+			console.log("-----------------------------------------------------------------------");
+			console.log("Converted app will be avaiable in "+global.output +global.target);
+			console.log("-----------------------------------------------------------------------\n");
+			console.log("Analyzing "+global.target+"...\n");
+    	}
 		global.common.downloadDependencies(global.target)
-		conversor.convert(global.target, outputFolder+global.target);
-		common.addDependencyToOutput(global.target, outputFolder+global.target, 'axios', '0.23.0');
-		global.common.downloadDependencies(outputFolder+global.target)
+		conversor.convert(global.target, global.output );
+		common.addDependencyToOutput(global.target, global.output , 'axios', '0.23.0');
+		global.common.downloadDependencies(global.output)
 		console.log("Finished!");
 		common.sumary();
 	},function(err){
