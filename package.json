@@ -1,6 +1,6 @@
 {
   "name": "node2faas",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Module to convert node.js apps into faas based node.js apps",
   "main": "index.js",
   "scripts": {
@@ -14,5 +14,11 @@
   "dependencies": {
     "adm-zip": "^0.4.13",
     "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1"
   }
 }

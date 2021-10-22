@@ -1,12 +1,12 @@
 
 provider "google" {
-  credentials = "${file(var.credential_file_path)}"
+  credentials = file(var.credential_file_path)
   project     = var.project
   region      = var.region
 }
 
-resource "random_string" "bucket_name" {
- length = 3
+resource "random_string" "default" {
+ length = 5
  special = false
  upper = false
  lower = false
@@ -14,17 +14,18 @@ resource "random_string" "bucket_name" {
 }
 
 resource "google_storage_bucket" "bucket" {
-  name = "node2faas-${var.project}-bucket-${random_string.bucket_name.result}"
+  name = "node2faas${var.name}"
+  force_destroy = true
 }
 
 resource "google_storage_bucket_object" "archive" {
-  name   = "index.zip-${var.project}-${var.name}"
+  name   = "index.zip-${var.name}-${random_string.default.result}"
   bucket = "${google_storage_bucket.bucket.name}"
   source = var.sourcecode_zip_path
 }
 
 resource "google_cloudfunctions_function" "function" {
-  name                  = "node2faas-${var.project}-${var.name}"
+  name                  = "node2faas-${var.name}-${random_string.default.result}"
   description           = "Automatic created by node2faas for process function -> ${var.name}"
   runtime               = "nodejs${var.runtime_version}"
   available_memory_mb   = var.memory
