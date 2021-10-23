@@ -6,8 +6,8 @@ provider "azurerm" {
   features {}
 }
 
-resource "random_string" "rg_name" {
- length = 3
+resource "random_string" "default" {
+ length = 5
  special = false
  upper = false
  lower = false
@@ -15,12 +15,12 @@ resource "random_string" "rg_name" {
 }
 
 resource "azurerm_resource_group" "rg" {
- name = "node2faas${random_string.rg_name.result}"
+ name = "node2faas-${var.name}-${random_string.default.result}"
  location = var.region
 }
 
 resource "azurerm_storage_account" "storage" {
- name = "node2faas${random_string.rg_name.result}"
+ name = "node2faas${var.name}${random_string.default.result}"
  resource_group_name = "${azurerm_resource_group.rg.name}"
  location = "${azurerm_resource_group.rg.location}"
  account_tier = "Standard"
@@ -28,13 +28,13 @@ resource "azurerm_storage_account" "storage" {
 }
 
 resource "azurerm_storage_container" "storage_container" {
- name = "node2faas${random_string.rg_name.result}"
+ name = "node2faas-${var.name}-${random_string.default.result}"
  storage_account_name = "${azurerm_storage_account.storage.name}"
- container_access_type = "blob"
+ container_access_type = "private"
 }
 
 resource "azurerm_storage_blob" "storage_blob" {
- name = "${var.name}.zip"
+ name = "node2faas-${var.name}-${random_string.default.result}.zip"
  storage_account_name = "${azurerm_storage_account.storage.name}"
  storage_container_name = "${azurerm_storage_container.storage_container.name}"
  type = "Block"
@@ -74,7 +74,7 @@ data "azurerm_storage_account_sas" "storage_sas" {
 }
 
 resource "azurerm_app_service_plan" "plan" {
- name = "node2faas${random_string.rg_name.result}"
+ name = "node2faas-${var.name}-${random_string.default.result}"
  location = "${azurerm_resource_group.rg.location}"
  resource_group_name = "${azurerm_resource_group.rg.name}"
  kind = "functionapp"
@@ -86,7 +86,7 @@ resource "azurerm_app_service_plan" "plan" {
 }
 
 resource "azurerm_application_insights" "insights" {
-  name                = "node2faas${random_string.rg_name.result}"
+  name                = "node2faas-${var.name}-${random_string.default.result}"
   location            = "${azurerm_resource_group.rg.location}"
   resource_group_name = "${azurerm_resource_group.rg.name}"
   application_type    = "Node.JS"
@@ -94,11 +94,13 @@ resource "azurerm_application_insights" "insights" {
 }
 
 resource "azurerm_function_app" "function" {
-  name = "node2faas${random_string.rg_name.result}"
+  name = "node2faas-${var.name}-${random_string.default.result}"
   location = "${azurerm_resource_group.rg.location}"
   resource_group_name = "${azurerm_resource_group.rg.name}"
   app_service_plan_id = "${azurerm_app_service_plan.plan.id}"
-  storage_connection_string = "${azurerm_storage_account.storage.primary_connection_string}"
+  storage_account_name       = azurerm_storage_account.storage.name
+  storage_account_access_key = azurerm_storage_account.storage.primary_access_key
+
   version = "~2"
 
   app_settings = {
@@ -115,7 +117,7 @@ resource "azurerm_function_app" "function" {
 }
 
 resource "azurerm_template_deployment" "function_keys" {
-  name = "node2fass${random_string.rg_name.result}"
+  name = "node2fass-${var.name}-${random_string.default.result}"
   parameters = {
     "functionApp" = "${azurerm_function_app.function.name}"
   }
