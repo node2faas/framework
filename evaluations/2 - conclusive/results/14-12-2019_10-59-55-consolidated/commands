@@ -1,0 +1,12 @@
+./consolid 1 9 CPU Local ;
+./consolid 10 18 Memory Local ;
+./consolid 19 27 IO Local ;
+./consolid 28 36 CPU GCP ;
+./consolid 37 45 Memory GCP ;
+./consolid 46 54 IO GCP ;
+./consolid 55 63 CPU AWS ;
+./consolid 64 72 Memory AWS ;
+./consolid 73 81 IO AWS ;
+./consolid 82 90 CPU Azure ;
+./consolid 91 99 Memory Azure ;
+./consolid 100 108 IO Azure ;
