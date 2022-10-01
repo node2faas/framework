@@ -1,0 +1,2 @@
+Generate clean resuts:
+ - cat * | grep -v error | grep -v init | grep -v finish | grep -v NOTFOUND | grep -v "timed out" | grep -v "TIMEDOUT"  | grep -v "Error"  > memoryClean.csv
