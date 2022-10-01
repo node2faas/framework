@@ -15,6 +15,7 @@ resource "random_string" "default" {
 
 resource "google_storage_bucket" "bucket" {
   name = "node2faas${var.name}"
+  location      = "US"
   force_destroy = true
 }
 
