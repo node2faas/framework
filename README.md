@@ -4,6 +4,9 @@
 
 [Hot Page](https://node2faas.faasification.com/)
 
+This project is the result of Leonardo Rebouças de Carvalho's master's degree, under the supervision of Aleteia Araujo, at the University of Brasília. Dissertation available at https://repositorio.unb.br/jspui/bitstream/10482/40473/1/2020_LeonardoRebou%c3%a7asdeCarvalho.pdf
+
+
 ## Versions
   - 0.2.0 - 2021,Oct
     1. AWS: 
@@ -213,7 +216,8 @@ The load example explores 3 potential function loads:
  - 2020, May => CLOSER, Online Streaming ([paper](https://www.insticc.org/Primoris/Resources/PaperPdf.ashx?idPaper=93815))
 
  - 2020, Nov => CCGRID, Melbourne, Australia ([paper](https://ieeexplore.ieee.org/document/9139623))
-
+ 
+ - 2023, Oct => IEEE Access ([paper](https://ieeexplore.ieee.org/document/10273986))
 
 ## Support
 
